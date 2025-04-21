@@ -8,3 +8,9 @@ A JavaScript-based inventory management system for a store. Built for a class as
 - Calculate total inventory value.
 - Apply discounts to products.
 - Search products by name.
+
+## How to Run
+- Open `index.html` in a browser or visit the GitHub Pages URL.
+- Click "Run Inventory Test" to view results.
+- Use the search bar to find products.
+- Click "Clear Output" to reset the display.
