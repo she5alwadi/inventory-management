@@ -9,36 +9,44 @@
 <body>
     <h1>Inventory Management System</h1>
     <button onclick="runTest()">Run Inventory Test</button>
-    <div id="output"></div>
-    <script src="inventory_management.js"></script>
+    <button class="reset" onclick="resetDiscountAndShow()">Reset Discount</button>
     <div>
         <input type="text" id="searchInput" placeholder="Enter product name">
         <button onclick="searchProduct()">Search Product</button>
     </div>
-    <script>
-        function searchProduct() {
-    const name = document.getElementById('searchInput').value;
-    const outputDiv = document.getElementById('output');
-    if (!store) runTest();
-    const result = store.findProductByName(name);
-    outputDiv.innerHTML += `Search for "${name}": ${result ? result.toString() : 'Not found'}<br>`;
-}
-    </script>
     <button class="clear" onclick="clearOutput()">Clear Output</button>
+    <div id="output"></div>
+    <footer>© 2025 Inventory Management System by [Your Name]</footer>
+    <script src="inventory_management.js"></script>
     <script>
+        function runTest() {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+            testInventorySystem();
+        }
+
+        function searchProduct() {
+            const name = document.getElementById('searchInput').value.trim();
+            const outputDiv = document.getElementById('output');
+            if (!name) {
+                outputDiv.innerHTML += "Please enter a product name to search.<br>";
+                return;
+            }
+            initializeStore();
+            const result = store.findProductByName(name);
+            outputDiv.innerHTML += `Search for "${name}": ${result ? result.toString() : 'Not found'}<br>`;
+        }
+
         function clearOutput() {
             document.getElementById('output').innerHTML = '';
         }
-    </script>
-    <script>
-        
-        function runTest() {
+
+        function resetDiscountAndShow() {
+            resetDiscount();
             const outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = ''; // Clear previous output
-            testInventorySystem(); // Run the test
+            outputDiv.innerHTML += "Discount reset. Current inventory value: $" + store.getInventoryValue().toFixed(2) + "<br>";
         }
 
-        // Redirect console.log to display in HTML
         const originalConsoleLog = console.log;
         console.log = function (...args) {
             originalConsoleLog.apply(console, args);
@@ -46,8 +54,5 @@
             outputDiv.innerHTML += args.join(' ') + '<br>';
         };
     </script>
-    <footer style="text-align: center; margin-top: 20px;">
-        © 2025 Inventory Management System
-    </footer>
 </body>
 </html>

@@ -13,36 +13,31 @@ h1 {
 
 button {
     padding: 10px 20px;
-    background-color: #28a745; /* Green */
+    background-color: #28a745;
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
 }
+
 button:hover {
     background-color: #218838;
 }
 
-#output {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-top: 20px;
-    background-color: #f9f9f9;
+button.clear {
+    background-color: #dc3545;
 }
 
-#output {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-top: 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+button.clear:hover {
+    background-color: #c82333;
 }
 
-footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #666;
-    font-size: 14px;
+button.reset {
+    background-color: #ffc107;
+}
+
+button.reset:hover {
+    background-color: #e0a800;
 }
 
 input[type="text"] {
@@ -51,9 +46,19 @@ input[type="text"] {
     font-size: 16px;
 }
 
-button.clear {
-    background-color: #dc3545;
+#output {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: monospace;
+    line-height: 1.5;
 }
-button.clear:hover {
-    background-color: #c82333;
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
 }
