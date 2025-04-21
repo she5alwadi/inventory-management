@@ -25,3 +25,14 @@ function testInventorySystem() {
     // Create 5 products (3 Product, 2 PerishableProduct)
     // Add to store, calculate value, apply 15% discount, search for "Milk"
 }
+
+function testInventorySystem() {
+    // Create regular products
+    const apple = new Product("Apple", 2.50, 50);
+    const banana = new Product("Banana", 1.75, 100);
+    const orange = new Product("Orange", 2.00, 75);
+    // Create perishable products
+    const milk = new PerishableProduct("Milk", 1.50, 10, "2025-12-31");
+    const yogurt = new PerishableProduct("Yogurt", 3.00, 20, "2025-11-30");
+    // ... rest of the function ...
+}
