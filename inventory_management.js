@@ -1,9 +1,11 @@
 // Product class
 class Product {
-    constructor(name, price, quantity) { /* Initialize name, price, quantity */ }
-    getTotalValue() { /* Return price * quantity */ }
-    toString() { /* Return product details string */ }
-    static applyDiscount(products, discount) { /* Reduce price by discount % */ }
+    constructor(name, price, quantity) {
+        if (price < 0 || quantity < 0) throw new Error("Price and quantity must be non-negative");
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
 }
 
 // PerishableProduct class (inherits Product)
@@ -41,9 +43,3 @@ const bread = new Product("Bread", 3.00, 30);
 // Add to store.addProduct(bread);
 // Include in Product.applyDiscount([... , bread, ...]);
 
-constructor(name, price, quantity) {
-    if (price < 0 || quantity < 0) throw new Error("Price and quantity must be non-negative");
-    this.name = name;
-    this.price = price;
-    this.quantity = quantity;
-}
