@@ -36,3 +36,7 @@ function testInventorySystem() {
     const yogurt = new PerishableProduct("Yogurt", 3.00, 20, "2025-11-30");
     // ... rest of the function ...
 }
+
+const bread = new Product("Bread", 3.00, 30);
+// Add to store.addProduct(bread);
+// Include in Product.applyDiscount([... , bread, ...]);
