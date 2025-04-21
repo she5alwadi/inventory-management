@@ -11,7 +11,19 @@
     <button onclick="runTest()">Run Inventory Test</button>
     <div id="output"></div>
     <script src="inventory_management.js"></script>
+    <div>
+        <input type="text" id="searchInput" placeholder="Enter product name">
+        <button onclick="searchProduct()">Search Product</button>
+    </div>
     <script>
+        function searchProduct() {
+            const name = document.getElementById('searchInput').value;
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML += `Search for "${name}": Not implemented yet<br>`;
+        }
+    </script>
+    <script>
+        
         function runTest() {
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
