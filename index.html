@@ -24,7 +24,7 @@
     outputDiv.innerHTML += `Search for "${name}": ${result ? result.toString() : 'Not found'}<br>`;
 }
     </script>
-    <button onclick="clearOutput()">Clear Output</button>
+    <button class="clear" onclick="clearOutput()">Clear Output</button>
     <script>
         function clearOutput() {
             document.getElementById('output').innerHTML = '';

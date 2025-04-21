@@ -50,3 +50,10 @@ input[type="text"] {
     margin-right: 10px;
     font-size: 16px;
 }
+
+button.clear {
+    background-color: #dc3545;
+}
+button.clear:hover {
+    background-color: #c82333;
+}
