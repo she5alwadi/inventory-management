@@ -17,10 +17,12 @@
     </div>
     <script>
         function searchProduct() {
-            const name = document.getElementById('searchInput').value;
-            const outputDiv = document.getElementById('output');
-            outputDiv.innerHTML += `Search for "${name}": Not implemented yet<br>`;
-        }
+    const name = document.getElementById('searchInput').value;
+    const outputDiv = document.getElementById('output');
+    if (!store) runTest();
+    const result = store.findProductByName(name);
+    outputDiv.innerHTML += `Search for "${name}": ${result ? result.toString() : 'Not found'}<br>`;
+}
     </script>
     <script>
         

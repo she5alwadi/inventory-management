@@ -43,3 +43,9 @@ const bread = new Product("Bread", 3.00, 30);
 // Add to store.addProduct(bread);
 // Include in Product.applyDiscount([... , bread, ...]);
 
+let store;
+function testInventorySystem() {
+    store = new Store();
+    // ... rest of the function ...
+}
+
